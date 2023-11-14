@@ -17,7 +17,7 @@ for pythonFile in pythonFiles:
 # NAVIGATING INSIDE DIRECTORY
 print(termcolor.colored("\nNAVIGATING INSIDE DIRECTORY",color="blue"))
 newPath = Path('./projects/')
-combined = newPath / 'inside' / 'test.py'
+combined = newPath / 'inside' / 'test.txt'
 
 print(termcolor.colored(f"Only folder: {newPath}",color="green"))
 print(termcolor.colored(f"File Inside: {combined}",color="green"))
@@ -35,3 +35,7 @@ print(termcolor.colored(f"./projects is folder: {newPath.is_dir()}",color="green
 
 # opening files
 print(termcolor.colored("\nOPENING FILES",color="blue"))
+f = combined.open()
+fileContent = f.readlines()
+for line in fileContent:
+    print(termcolor.colored(line,color="green",on_color="on_grey"))
